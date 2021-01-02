@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+GITS="$(find $HOME -name .git | awk 'FS="/" {$NF=""; print $0} OFS="/"')"
+
+for GIT in $GITS
+do
+echo "In $GIT:"
+git -C $GIT $@
+echo ''
+done
