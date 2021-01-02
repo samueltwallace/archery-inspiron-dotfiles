@@ -2,13 +2,13 @@ font:
         size: 10
 
         normal:
-                family: Iosevka
+                family: IBM Plex Mono
                 style: Regular
         bold:
-                family: Iosevka
+                family: IBM Plex Mono
                 style: Bold
         italic:
-                family: Iosevka
+                family: IBM Plex Mono
                 style: Italic
 
 

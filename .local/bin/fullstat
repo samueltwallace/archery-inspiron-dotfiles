@@ -1,12 +1,16 @@
 #!/usr/bin/bash
 
-
+echo 'who'
 who
-echo ''
+echo -e '\ntop'
 top -b -n 1 -o %MEM | head
 echo ''
 top -b -n 1 -o %CPU | head | tail -n 5
-echo ''
+echo -e '\ndf -h'
 df -h
-echo ''
+echo -e '\nping 8.8.8.8'
 ping -c 1 8.8.8.8 | head -n 2
+echo -e '\nlsusb'
+lsusb
+echo -e '\nlsblk'
+lsblk
