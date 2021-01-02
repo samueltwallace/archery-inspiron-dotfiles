@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+
+who
+echo ''
+top -b -n 1 -o %MEM | head
+echo ''
+top -b -n 1 -o %CPU | head | tail -n 5
+echo ''
+df -h
+echo ''
+ping -c 1 8.8.8.8 | head -n 2

@@ -1,0 +1,25 @@
+#!/usr/bin/perl
+
+use Getopt::Long qw(GetOptions);
+
+use strict;
+use warnings;
+
+my $tags;
+my $link;
+
+GetOptions(
+	'link=s' => \$link,
+	'tags=s' => \$tags
+	) or die "Feed me a --link [-l] and some --tags [-t]!\n";
+
+my @info = ($1, $2) if( $link =~ m!https*://([^/]+)(?:/[^/]*/(.*))*!);
+
+$info[1] = $info[0] unless $info[1];
+
+$info[1] =~ s/\W/ /g;
+my $mark = "$info[0];$info[1];$tags;$link\n";
+
+open( my $markfile, ">>", $ENV{"HOME"} . "/.bookmarks") or die "Can't write to bookmark file";
+print $markfile $mark;
+close $markfile;

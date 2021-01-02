@@ -1,0 +1,14 @@
+font:
+        size: 10
+
+        normal:
+                family: Iosevka
+                style: Regular
+        bold:
+                family: Iosevka
+                style: Bold
+        italic:
+                family: Iosevka
+                style: Italic
+
+
