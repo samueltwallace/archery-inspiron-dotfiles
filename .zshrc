@@ -59,6 +59,10 @@ function rsearch() {
 	cat $HOME/.bookmarks | rg "$@" | cut -d';' -f 4
 }
 
+function ld() {
+	mkdir $@ && cd $@
+}
+
 
 alias refresh='clear && exec $SHELL -l'
 alias :q='exit'

@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-GITS="$(find $HOME -name .git | awk 'FS="/" {$NF=""; print $0} OFS="/"')"
+GITS="$(find $HOME -name .git | sed 's/\.git//')"
 
 for GIT in $GITS
 do
