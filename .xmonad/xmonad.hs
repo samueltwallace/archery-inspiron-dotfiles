@@ -31,4 +31,4 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
 autostart = do
 	spawn "feh --bg-fill --randomize $HOME/Pictures/**"
-	; spawn "wal -R"
+	; spawn "picom &"
