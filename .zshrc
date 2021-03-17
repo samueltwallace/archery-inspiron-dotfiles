@@ -43,6 +43,10 @@ function ed() {
 	vimconfig general.vim $1
 }
 
+function jed() {
+	vimconfig julia.vim $1
+}
+
 function split() {
 	tmux split-window -$1
 }

@@ -14,13 +14,16 @@ main = do
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
      [ ((modm .|. shiftMask, xK_Return), spawn "firefox")
-     , ((modm, xK_Return), spawn "alacritty -e tmux")
+     , ((modm, xK_Return), spawn "(pgrep alacritty && tmux neww) || ( (pgrep tmux && alacritty -e tmux attach) || alacritty -e tmux )")
+     , ((modm .|. shiftMask, xK_s), spawn "pavucontrol")
      , ((modm .|. shiftMask, xK_q), kill)
      , ((modm, xK_j), windows W.focusDown)
      , ((modm, xK_k), windows W.focusUp)
      , ((modm .|. shiftMask, xK_h), windows W.swapMaster)
-     , ((modm, xK_Escape), io (exitWith ExitSuccess))
+     , ((modm, xK_Escape), spawn "i3lock -c 000000")
+     , ((modm, xK_asciitilde), io (exitWith ExitSuccess))
      , ((modm, xK_semicolon), spawn "rofi -show run")
+     , ((modm, xK_p), spawn "rofi -e '$(date)'")
      , ((modm .|. shiftMask, xK_z), spawn "$HOME/.config/rofi/pdf.sh")
      ]
      ++
