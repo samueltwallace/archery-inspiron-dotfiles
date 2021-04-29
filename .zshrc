@@ -12,8 +12,6 @@ compinit
 # End of lines added by compinstall
 #
 
-wal -R &> /dev/null
-
 PROMPT='%F{green}%B%n%b@%M:%~%f'$'\n\n''%(?.%F{green}.%F{red})%! @ %* '$'\U27A0%f '
 
 export PATH=$HOME/.local/bin:$PATH
@@ -45,6 +43,10 @@ function ed() {
 
 function jed() {
 	vimconfig julia.vim $1
+}
+
+function ged() {
+	vimconfig go.vim $1
 }
 
 function split() {
