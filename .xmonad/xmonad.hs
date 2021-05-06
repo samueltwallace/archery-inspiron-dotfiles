@@ -4,6 +4,13 @@ import qualified XMonad.StackSet as W
 import qualified Data.Map as M
 import XMonad.Hooks.EwmhDesktops
 
+
+myManageHook = composeAll
+	[ className =? "firefox" --> doShift "1"
+	, className =? "Alacritty" --> doShift "2"
+	, className =? "Emacs" --> doShift "3"
+	]
+	
 main = do
      xmonad $ ewmh def
          { terminal = "alacritty"
@@ -11,6 +18,7 @@ main = do
          , borderWidth = 2
          , keys = myKeys
          , startupHook = autostart
+	 , manageHook = myManageHook <+> manageHook defaultConfig
          }
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
@@ -27,6 +35,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
      , ((modm, xK_space), spawn "firefox --search \"$(rofi -dmenu)\"")
      , ((modm, xK_w), spawn "rofi -show window")
      , ((modm .|. shiftMask, xK_z), spawn "$HOME/.config/rofi/pdf.sh")
+     , ((modm .|. shiftMask, xK_e), spawn "emacs")
      ]
      ++
      [((m .|. modm, k), windows $ f i)
@@ -37,3 +46,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 autostart = do
 	spawn "feh --bg-fill --randomize $HOME/Pictures/**"
 	; spawn "picom &"
+	; spawn "firefox"
+	; spawn "emacs"
+	; spawn  "alacritty -e tmux"
+
