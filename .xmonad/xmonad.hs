@@ -3,6 +3,7 @@ import System.Exit
 import qualified XMonad.StackSet as W
 import qualified Data.Map as M
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Actions.CycleWS
 
 
 myManageHook = composeAll
@@ -36,6 +37,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
      , ((modm, xK_w), spawn "rofi -show window")
      , ((modm .|. shiftMask, xK_z), spawn "$HOME/.config/rofi/pdf.sh")
      , ((modm .|. shiftMask, xK_e), spawn "emacs")
+     , ((modm, xK_Tab), nextScreen)
      ]
      ++
      [((m .|. modm, k), windows $ f i)

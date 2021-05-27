@@ -69,6 +69,9 @@ function ld() {
 	mkdir $@ && cd $@
 }
 
+function fetch () {
+    neofetch --ascii $HOME/.local/share/$1.ascii
+}
 
 alias refresh='clear && exec $SHELL -l'
 alias :q='exit'
