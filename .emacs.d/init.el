@@ -4,7 +4,7 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-(set-face-attribute 'default nil :family "Iosevka")
+(set-face-attribute 'default nil :family "IBM Plex Mono")
 (set-face-attribute 'default nil :height 98)
 (load-theme 'wombat)
 (setq frame-resize-pixelwise t)
