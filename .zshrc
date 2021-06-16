@@ -29,25 +29,7 @@ function vimconfig() {
 	fi
 }
 
-function zed() {
-	vimconfig zig.vim $1
-}
 
-function ced() {
-	vimconfig clang.vim $1
-}
-
-function ed() {
-	vimconfig general.vim $1
-}
-
-function jed() {
-	vimconfig julia.vim $1
-}
-
-function ged() {
-	vimconfig go.vim $1
-}
 
 function split() {
 	tmux split-window -$1
@@ -55,10 +37,6 @@ function split() {
 
 function cz() {
 	cd $(find **/ | fzf --reverse --height=15)
-}
-
-function ted() {
-	vimconfig latex.vim $1
 }
 
 function rsearch() {
@@ -81,3 +59,4 @@ alias mstat='top -b -n 1 -o %MEM | head'
 alias cstat='top -b -n 1 -o %CPU | head'
 alias config='git --git-dir=$HOME/repos/archery-inspiron-dotfiles --work-tree=$HOME'
 alias shortwttr='curl -s wttr.in | head -n 7'
+alias ed='emacsclient -n'

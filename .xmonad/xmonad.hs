@@ -8,13 +8,13 @@ import Graphics.X11.ExtraTypes.XF86
 
 myManageHook = composeAll
 	[ className =? "firefox" --> doShift "2"
-	, className =? "Alacritty" --> doShift "1"
+	, className =? "st" --> doShift "1"
 	, className =? "Emacs" --> doShift "3"
 	]
 	
 main = do
      xmonad $ ewmh def
-         { terminal = "alacritty"
+         { terminal = "st"
          , modMask = mod4Mask
          , borderWidth = 2
          , keys = myKeys
@@ -50,5 +50,5 @@ autostart = do
 	; spawn "picom &"
 	; spawn "firefox"
 	; spawn "emacs"
-	; spawn  "(pgrep tmux && alacritty -e tmux attach) || alacritty -e tmux"
+	; spawn  "(pgrep tmux && st -e tmux attach) || st -e tmux"
 
