@@ -1,3 +1,3 @@
 (set-face-attribute 'default nil :family "IBM Plex Mono")
 (set-face-attribute 'default nil :height 98)
-(load-theme 'gruvbox-dark-hard)
+(load-theme 'nord)

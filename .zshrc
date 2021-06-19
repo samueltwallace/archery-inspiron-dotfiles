@@ -12,7 +12,7 @@ compinit
 # End of lines added by compinstall
 #
 
-PROMPT='%F{green}%B%n%b@%M:%~%f'$'\n\n''%(?.%F{green}.%F{red})%! @ %* '$'\U27A0%f '
+PROMPT='%F{blue}%B%n%b@%M:%~%f'$'\n\n''%(?.%F{blue}.%F{red})%! @ %* '$'\U27A0%f '
 
 export PATH=$HOME/.local/bin:$PATH
 

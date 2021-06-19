@@ -46,8 +46,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
 
 autostart = do
-	spawn "feh --bg-fill --randomize $HOME/Pictures/**"
-	; spawn "picom &"
+	spawn "picom &"
 	; spawn "firefox"
 	; spawn "emacs"
 	; spawn  "(pgrep tmux && st -e tmux attach) || st -e tmux"

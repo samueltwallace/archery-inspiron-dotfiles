@@ -70,10 +70,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("6b5c518d1c250a8ce17463b7e435e9e20faa84f3f7defba8b579d4f5925f60c1" default))
+   '("37768a79b479684b0756dec7c0fc7652082910c37d8863c35b702db3f16000f8" "6b5c518d1c250a8ce17463b7e435e9e20faa84f3f7defba8b579d4f5925f60c1" default))
  '(org-agenda-files
    '("~/org/misc/www.org" "~/org/fiction/books.org" "~/org/top.org" "~/org/work/MSGI2021.org" "~/org/tech/software.org" "~/org/tech/hardware.org" "~/org/school/ian.org" "~/org/misc/agenda.org" "~/org/fiction/DnDCampaignIdeas.org"))
- '(package-selected-packages '(gruvbox-theme go-mode use-package magit auctex-latexmk)))
+ '(package-selected-packages
+   '(nord-theme gruvbox-theme go-mode use-package magit auctex-latexmk)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
