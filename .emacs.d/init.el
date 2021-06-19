@@ -4,9 +4,7 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 
-(set-face-attribute 'default nil :family "IBM Plex Mono")
-(set-face-attribute 'default nil :height 98)
-(load-theme 'gruvbox-dark-hard)
+(load "~/.emacs.d/interface.el")
 (setq frame-resize-pixelwise t)
 (setq global-linum-mode t)
 (setq dired-listing-switches "-ahl")
