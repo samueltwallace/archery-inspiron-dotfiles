@@ -43,11 +43,11 @@ julia 2:1.6.1-2
 libusb-compat 0.1.7-1
 lightdm 1:1.30.0-4
 lightdm-gtk-greeter 1:2.0.8-1
-linux 5.12.10.arch1-1
+linux 5.12.11.arch1-1
 linux-firmware 20210511.7685cf4-1
 llvm 12.0.0-2
 m4 1.4.19-1
-maim 5.6.3-4
+maim 5.7.4-1
 make 4.3-3
 neofetch 7.1.0-2
 neovim 0.4.4-2
@@ -65,9 +65,9 @@ picom 8.2-1
 pipewire-alsa 1:0.3.30-2
 pipewire-jack 1:0.3.30-2
 pkgconf 1.7.3-1
-pulseeffects 5.0.3-2
+pulseeffects 5.0.4-1
 python-cairo 1.20.0-3
-python-pip 20.3.2-1
+python-pip 20.3.3-1
 python-pywal 3.3.0-3
 qt5-base 5.15.2+kde+r196-1
 ripgrep 13.0.0-2
@@ -90,7 +90,7 @@ texlive-publishers 2021.58683-1
 texlive-science 2021.58667-1
 tmux 3.2_a-1
 ttf-ibm-plex 5.1.3-1
-ttf-iosevka 7.0.4-1
+ttf-iosevka 7.1.0-1
 unzip 6.0-14
 usbutils 013-1
 vim 8.2.2891-1

@@ -10,9 +10,11 @@
 (setq dired-listing-switches "-ahl")
 (exit-splash-screen)
 
+
 (find-file "~/org/top.org")
 
 (global-set-key (kbd "C-<tab>") 'other-window)
+(global-set-key (kbd "C-<return>") 'eshell)
 
 ;; Packages
 
@@ -35,6 +37,8 @@
 (use-package bind-key)
 (use-package go-mode)
 (require 'server)
+(server-start)
+
 
 (defun insert-shell-command (cmd) (insert (shell-command-to-string (format "printf %%s \"$(%s)\"" cmd))))
 (defun insert-date (date) (interactive "sWhen? ") (insert-shell-command (format "date -d '%s'" date)))
@@ -63,6 +67,17 @@
 
 (setq org-html-doctype "html5")
 
+;; Julia
+
+(defun run-julia () (interactive) (ansi-term "/usr/bin/julia"))
+
+;; Zathura
+
+(setq async-shell-command-buffer "new-buffer")
+
+(defun zathura-view (file) (interactive "sFile: ") (async-shell-command (format "/usr/bin/zathura %s" file) "* Zathura *"))
+
+(defun dired-zathura-view-marked () (interactive) (mapc (lambda (file) (async-shell-command (format "/usr/bin/zathura %s" file) "* Zathura *" )) (dired-get-marked-files)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

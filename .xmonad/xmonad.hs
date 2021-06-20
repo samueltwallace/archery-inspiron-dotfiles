@@ -5,17 +5,30 @@ import qualified Data.Map as M
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Actions.CycleWS
 import Graphics.X11.ExtraTypes.XF86
+import XMonad.Layout.PerWorkspace
+import XMonad.Layout.Tabbed
+
+
+
 
 myManageHook = composeAll
 	[ className =? "firefox" --> doShift "2"
 	, className =? "st" --> doShift "1"
 	, className =? "Emacs" --> doShift "3"
+	, className =? "Zathura" --> doShift "4"
 	]
-	
+
+
+myLayoutHook = onWorkspace "4" simpleTabbed $
+	     Full
+
+
+
 main = do
      xmonad $ ewmh def
          { terminal = "st"
          , modMask = mod4Mask
+	 , layoutHook = myLayoutHook
          , borderWidth = 2
          , keys = myKeys
          , startupHook = autostart
@@ -46,8 +59,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
 
 autostart = do
-	spawn "picom &"
+	spawn "$HOME/.local/bin/fehbg"
+	;spawn "picom &"
 	; spawn "firefox"
 	; spawn "emacs"
-	; spawn  "(pgrep tmux && st -e tmux attach) || st -e tmux"
+
 
