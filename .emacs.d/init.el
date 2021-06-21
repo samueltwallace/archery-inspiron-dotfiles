@@ -66,6 +66,18 @@
 ;; Org
 
 (setq org-html-doctype "html5")
+(setq org-publish-project-alist
+      '(("personal-website"
+	:base-directory "~/repos/samueltwallace.github.io"
+	:base-extension "org"
+	:publishing-directory "~/repos/samueltwallace.github.io"
+	:publishing-function org-html-publish-to-html
+	:auto-sitemap t
+	:recursive t
+	:sitemap-title "Map of this site"
+	)
+      ))
+
 
 ;; Julia
 
@@ -77,7 +89,7 @@
 
 (defun zathura-view (file) (interactive "sFile: ") (async-shell-command (format "/usr/bin/zathura %s" file) "* Zathura *"))
 
-(defun dired-zathura-view-marked () (interactive) (mapc (lambda (file) (async-shell-command (format "/usr/bin/zathura %s" file) "* Zathura *" )) (dired-get-marked-files)))
+(defun dired-zathura-view-marked () (interactive) (mapc (lambda (file) (async-shell-command (format "/usr/bin/zathura \"%s\"" file) "* Zathura *" )) (dired-get-marked-files)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

@@ -43,7 +43,7 @@ julia 2:1.6.1-2
 libusb-compat 0.1.7-1
 lightdm 1:1.30.0-4
 lightdm-gtk-greeter 1:2.0.8-1
-linux 5.12.11.arch1-1
+linux 5.12.12.arch1-1
 linux-firmware 20210511.7685cf4-1
 llvm 12.0.0-2
 m4 1.4.19-1
@@ -69,7 +69,7 @@ pulseeffects 5.0.4-1
 python-cairo 1.20.0-3
 python-pip 20.3.3-1
 python-pywal 3.3.0-3
-qt5-base 5.15.2+kde+r196-1
+qt5-base 5.15.2+kde+r199-1
 ripgrep 13.0.0-2
 rofi 1.6.1-1
 screenkey 1.4-2
