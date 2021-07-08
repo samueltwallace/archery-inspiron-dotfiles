@@ -16,11 +16,13 @@ myManageHook = composeAll
 	, className =? "st" --> doShift "1"
 	, className =? "Emacs" --> doShift "3"
 	, className =? "Zathura" --> doShift "4"
+        , className =? "gksqt" --> doShift "5"
 	]
 
 
 myLayoutHook = onWorkspace "4" simpleTabbed $
-	     Full
+               onWorkspace "3" Full $
+	       Tall 1 0.03 0.5
 
 
 
@@ -42,7 +44,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
      , ((modm, xK_j), windows W.focusDown)
      , ((modm, xK_k), windows W.focusUp)
      , ((modm .|. shiftMask, xK_h), windows W.swapMaster)
-     , ((modm, xK_Escape), spawn "i3lock -i ~/Pictures/pixabay/binary-1254502_1280.png")
+     , ((modm, xK_Escape), spawn "i3lock -i ~/Pictures/pexels/owl.png")
      , ((modm .|. shiftMask, xK_Escape), io (exitWith ExitSuccess))
      , ((modm, xK_space), spawn "rofi -show run")
      , ((modm, xK_w), spawn "rofi -show window")
