@@ -17,6 +17,9 @@
 (global-set-key (kbd "C-<return>") 'eshell)
 (global-set-key (kbd "M-<right>") 'tab-next)
 (global-set-key (kbd "M-<left>") 'tab-previous)
+(global-set-key (kbd "C-x f") 'fzf)
+(global-set-key (kbd "C-x F") 'fzf-dired)
+
 (setq eshell-prefer-lisp-functions t)
 
 ;; Packages
@@ -40,6 +43,7 @@
 (use-package bind-key)
 (use-package go-mode)
 (use-package haskell-mode)
+(use-package pdf-tools)
 (require 'server)
 (require 'tramp)
 (server-start)
@@ -101,6 +105,11 @@
 
 (defun run-ghci () (interactive) (ansi-term "/usr/bin/ghci"))
 
+;; FZF
+
+(defun fzf-dired () (interactive) (fzf-with-entries (directory-files-recursively default-directory  ".+/" t) 'dired))
+
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -111,7 +120,7 @@
    '("cf9414f229f6df728eb2a5a9420d760673cca404fee9910551caf9c91cff3bfa" "37768a79b479684b0756dec7c0fc7652082910c37d8863c35b702db3f16000f8" "6b5c518d1c250a8ce17463b7e435e9e20faa84f3f7defba8b579d4f5925f60c1" default))
  '(org-agenda-files '("~/sam.org"))
  '(package-selected-packages
-   '(pdf-tools tron-legacy-theme julia-mode ormolu haskell-mode nord-theme gruvbox-theme go-mode use-package magit auctex-latexmk)))
+   '(lua-mode fzf pdf-tools tron-legacy-theme julia-mode ormolu haskell-mode nord-theme gruvbox-theme go-mode use-package magit auctex-latexmk)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

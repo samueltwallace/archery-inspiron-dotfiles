@@ -44,7 +44,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
      , ((modm, xK_j), windows W.focusDown)
      , ((modm, xK_k), windows W.focusUp)
      , ((modm .|. shiftMask, xK_h), windows W.swapMaster)
-     , ((modm, xK_Escape), spawn "i3lock -i ~/Pictures/pexels/owl.png")
+     , ((modm, xK_Escape), spawn "i3lock -i ~/Pictures/pexels/owls.png")
      , ((modm .|. shiftMask, xK_Escape), io (exitWith ExitSuccess))
      , ((modm, xK_space), spawn "rofi -show run")
      , ((modm, xK_w), spawn "rofi -show window")
